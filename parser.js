@@ -4,16 +4,16 @@ var fulltext =
 fs.readFileSync('./test.txt').toString().split('\n')
 var rows = []
 
-for (var a = 0; a <= 27; a++){
+//for (var a = 0; a <= 3; a++){
   for (var i = 0; i < fulltext.length - 3; i+=4) {
     rows.push([
-      fulltext[i].substr(a,3), 
-      fulltext[(i+1)].substr(a,3), 
-      fulltext[(i+2)].substr(a,3), 
-      fulltext[(i+3)].substr(a,3)
+      fulltext[i].substr(0,3), 
+      fulltext[(i+1)].substr(0,3), 
+      fulltext[(i+2)].substr(0,3), 
+      fulltext[(i+3)].substr(0,3)
     ])
   } 
-}
+//}
 var zero = [ ' _ ', '| |', '|_|', '' ]
 var one = [ '', '  |', '  |', '' ]
 var two = [ ' _ ', ' _|', '|_ ', '' ]
@@ -26,8 +26,10 @@ var eight = [ ' _ ', '|_|', '|_|', '' ]
 var nine = [ ' _ ', '|_|', ' _|', '' ]
 
 for (var i = 0; i < rows.length; i++){
-  if (JSON.stringify(rows[i]) == JSON.stringify(zero)) console.log(0)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(one)) console.log(1)
+  if (JSON.stringify(rows[i]) == JSON.stringify(zero))
+    console.log(0)
+  else if (JSON.stringify(rows[i]) == JSON.stringify(one))
+    console.log(1)
   else if (JSON.stringify(rows[i]) == JSON.stringify(two))
     console.log(2)
   else if (JSON.stringify(rows[i]) == JSON.stringify(three))
@@ -46,4 +48,10 @@ for (var i = 0; i < rows.length; i++){
     console.log(9)
   else console.log(':(') 
 }
+console.log(rows[11][0])
+console.log(rows[11][1])
+console.log(rows[11][2])
+console.log(rows[11][3])
 
+console.log(JSON.stringify(rows[11]))
+console.log(JSON.stringify(one))
