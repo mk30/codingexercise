@@ -5,16 +5,16 @@ fs.readFileSync('./test.txt').toString().split('\n')
 fulltext.pop()
 var rows = []
 
-//for (var a = 0; a <= 3; a++){
+for (var a = 0; a <= fulltext.length; a+=3){
   for (var i = 0; i < fulltext.length - 3; i+=4) {
     rows.push([
-      fulltext[i].substr(0,3), 
-      fulltext[(i+1)].substr(0,3), 
-      fulltext[(i+2)].substr(0,3), 
-      fulltext[(i+3)].substr(0,3)
+      fulltext[(i)].substr(a,3), 
+      fulltext[(i+1)].substr(a,3), 
+      fulltext[(i+2)].substr(a,3), 
+      fulltext[(i+3)].substr(a,3)
     ])
   } 
-//}
+}
 var zero = [ ' _ ', '| |', '|_|', '   ' ] 
 var one = [ '   ', '  |', '  |', '   ' ]
 var two = [ ' _ ', ' _|', '|_ ', '   ' ]
@@ -47,9 +47,9 @@ for (var i = 0; i < rows.length; i++){
     console.log(8)
   else if (JSON.stringify(rows[i]) == JSON.stringify(nine))
     console.log(9)
-  else console.log(':(') 
+  else return
 }
-var a = 10 
+var a = 13 
 
 console.log(rows[a][0])
 console.log(rows[a][1])
