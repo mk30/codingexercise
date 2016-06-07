@@ -2,6 +2,7 @@ var fs = require('fs')
 
 var fulltext =
 fs.readFileSync('./test.txt').toString().split('\n')
+fulltext.pop()
 var rows = []
 
 //for (var a = 0; a <= 3; a++){
@@ -14,16 +15,16 @@ var rows = []
     ])
   } 
 //}
-var zero = [ ' _ ', '| |', '|_|', '' ]
-var one = [ '', '  |', '  |', '' ]
-var two = [ ' _ ', ' _|', '|_ ', '' ]
-var three = [ ' _ ', ' _|', ' _|', '' ]
-var four = [ '   ', '|_|', '  |', '' ]
-var five = [ ' _ ', '|_ ', ' _|', '' ]
-var six = [ ' _ ', '|_ ', '|_|', '' ]
-var seven = [ ' _ ', '  |', '  |', '' ]
-var eight = [ ' _ ', '|_|', '|_|', '' ]
-var nine = [ ' _ ', '|_|', ' _|', '' ]
+var zero = [ ' _ ', '| |', '|_|', '   ' ] 
+var one = [ '   ', '  |', '  |', '   ' ]
+var two = [ ' _ ', ' _|', '|_ ', '   ' ]
+var three = [ ' _ ', ' _|', ' _|', '   ' ]
+var four = [ '   ', '|_|', '  |', '   ' ]
+var five = [ ' _ ', '|_ ', ' _|', '   ' ]
+var six = [ ' _ ', '|_ ', '|_|', '   ' ]
+var seven = [ ' _ ', '  |', '  |', '   ' ]
+var eight = [ ' _ ', '|_|', '|_|', '   ' ]
+var nine = [ ' _ ', '|_|', ' _|', '   ' ]
 
 for (var i = 0; i < rows.length; i++){
   if (JSON.stringify(rows[i]) == JSON.stringify(zero))
@@ -48,10 +49,12 @@ for (var i = 0; i < rows.length; i++){
     console.log(9)
   else console.log(':(') 
 }
-console.log(rows[11][0])
-console.log(rows[11][1])
-console.log(rows[11][2])
-console.log(rows[11][3])
+var a = 10 
 
-console.log(JSON.stringify(rows[11]))
-console.log(JSON.stringify(one))
+console.log(rows[a][0])
+console.log(rows[a][1])
+console.log(rows[a][2])
+console.log(rows[a][3])
+
+console.log(rows[a])
+console.log(one)
