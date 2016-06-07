@@ -1,25 +1,19 @@
 var fs = require('fs')
 
-
 var fulltext =
 fs.readFileSync('./test.txt').toString().split('\n')
-var line = []
+var rows = []
 
-/*
-line.push(fulltext[32].substr(3,3), fulltext[33].substr(3,3),
-fulltext[34].substr(3,3), fulltext[35].substr(3,3))
-*/
-
-for (var i = 0; i < fulltext.length - 3; i+=4) {
-  line.push(
-    fulltext[i].substr(0,3),
-    fulltext[(i+1)].substr(0,3),
-    fulltext[(i+2)].substr(0,3),
-    fulltext[(i+3)].substr(0,3)
-  )
-} 
-
-console.log(line)
+for (var a = 0; a <= 27; a++){
+  for (var i = 0; i < fulltext.length - 3; i+=4) {
+    rows.push([
+      fulltext[i].substr(a,3),
+      fulltext[(i+1)].substr(a,3),
+      fulltext[(i+2)].substr(a,3),
+      fulltext[(i+3)].substr(a,3)
+    ])
+  } 
+}
 
 var zero = [ ' _ ', '| |', '|_|', '' ]
 var one = [ '', '  |', '  |', '' ]
