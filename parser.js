@@ -49,12 +49,3 @@ for (var i = 0; i < rows.length; i++){
     console.log(9)
   else return
 }
-var a = 13 
-
-console.log(rows[a][0])
-console.log(rows[a][1])
-console.log(rows[a][2])
-console.log(rows[a][3])
-
-console.log(rows[a])
-console.log(one)
