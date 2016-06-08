@@ -1,7 +1,7 @@
 var fs = require('fs')
 
 var fulltext =
-fs.readFileSync('./test.txt').toString().split('\n')
+fs.readFileSync(process.argv[2]).toString().split('\n')
 fulltext.pop()
 var rows = []
 
