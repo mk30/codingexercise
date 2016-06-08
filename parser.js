@@ -3,11 +3,12 @@ var fs = require('fs')
 var fulltext =
 fs.readFileSync(process.argv[2]).toString().split('\n')
 fulltext.pop()
-var rows = []
+
+var nums = []
 
 for (var a = 0; a <= fulltext.length; a+=3){
   for (var i = 0; i < fulltext.length - 3; i+=4) {
-    rows.push([
+    nums.push([
       fulltext[(i)].substr(a,3), 
       fulltext[(i+1)].substr(a,3), 
       fulltext[(i+2)].substr(a,3), 
@@ -26,26 +27,26 @@ var seven = [ ' _ ', '  |', '  |', '   ' ]
 var eight = [ ' _ ', '|_|', '|_|', '   ' ]
 var nine = [ ' _ ', '|_|', ' _|', '   ' ]
 
-for (var i = 0; i < rows.length; i++){
-  if (JSON.stringify(rows[i]) == JSON.stringify(zero))
+for (var i = 0; i < nums.length; i++){
+  if (JSON.stringify(nums[i]) == JSON.stringify(zero))
     console.log(0)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(one))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(one))
     console.log(1)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(two))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(two))
     console.log(2)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(three))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(three))
     console.log(3)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(four))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(four))
     console.log(4)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(five))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(five))
     console.log(5)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(six))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(six))
     console.log(6)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(seven))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(seven))
     console.log(7)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(eight))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(eight))
     console.log(8)
-  else if (JSON.stringify(rows[i]) == JSON.stringify(nine))
+  else if (JSON.stringify(nums[i]) == JSON.stringify(nine))
     console.log(9)
   else return
 }
