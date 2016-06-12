@@ -1,8 +1,9 @@
 var fs = require('fs')
 
-var fulltext =
-fs.readFileSync(process.argv[2]).toString()
-for (var n = 0; n < 20; n++){
+var fulltext = fs.readFileSync(process.argv[2]).toString()
+var maxn = (fulltext.split('\n').length - 1)/4
+
+for (var n = 0; n < maxn; n++){
   for (var i = 112*n; i < 27+(112*n); i+=3) {
     console.log(fulltext.substr(i, 3))
     console.log(fulltext.substr(i + 28, 3))
@@ -10,26 +11,6 @@ for (var n = 0; n < 20; n++){
     console.log(fulltext.substr(i + (28*3), 3))
   } 
 }
-/*
-for (var i = 112; i < (27+112); i+=3) {
-  console.log(fulltext.substr(i, 3))
-  console.log(fulltext.substr(i + 28, 3))
-  console.log(fulltext.substr(i + (28*2), 3))
-  console.log(fulltext.substr(i + (28*3), 3))
-} 
-for (var i = (112*2); i < (27+(112*2)); i+=3) {
-  console.log(fulltext.substr(i, 3))
-  console.log(fulltext.substr(i + 28, 3))
-  console.log(fulltext.substr(i + (28*2), 3))
-  console.log(fulltext.substr(i + (28*3), 3))
-} 
-for (var i = (112*3); i < (27+(112*3)); i+=3) {
-  console.log(fulltext.substr(i, 3))
-  console.log(fulltext.substr(i + 28, 3))
-  console.log(fulltext.substr(i + (28*2), 3))
-  console.log(fulltext.substr(i + (28*3), 3))
-} 
-*/
 
 var zero = [ ' _ ', '| |', '|_|', '   ' ] 
 var one = [ '   ', '  |', '  |', '   ' ]
